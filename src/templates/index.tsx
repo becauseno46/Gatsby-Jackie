@@ -48,11 +48,11 @@ const HomePosts = css`
     }
 
     .post-card:nth-of-type(6n + 1):not(.no-image) h2 {
-      font-size: 2.6rem;
+      font-size: 2rem;
     }
 
     .post-card:nth-of-type(6n + 1):not(.no-image) p {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       line-height: 1.55em;
     }
 
@@ -131,16 +131,18 @@ const IndexPage: React.FC<IndexProps> = props => {
       <Wrapper>
         <header
           css={[outer, SiteHeader]}
+          /*
           style={{
             backgroundImage: `url('${props.data.header.childImageSharp.fluid.src}')`,
           }}
+          */
         >
           <div css={inner}>
             <SiteHeaderContent>
               <SiteTitle>
                 {props.data.logo ? (
                   <img
-                    style={{ maxHeight: '45px' }}
+                    style={{ maxHeight: '150px' }}
                     src={props.data.logo.childImageSharp.fixed.src}
                     alt={config.title}
                   />
@@ -180,7 +182,7 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query blogPageQuery($skip: Int!, $limit: Int!) {
-    logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
+    logo: file(relativePath: { eq: "img/blog-logo.png" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
@@ -189,7 +191,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    header: file(relativePath: { eq: "img/blog-cover.jpg" }) {
+    header: file(relativePath: { eq: "img/blog-cover.png" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
@@ -233,7 +235,7 @@ export const pageQuery = graphql`
               }
             }
           }
-          excerpt
+          excerpt(pruneLength: 100, truncate: true)
           fields {
             layout
             slug

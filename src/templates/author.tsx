@@ -40,7 +40,7 @@ const AuthorMeta = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 0 10px 0;
-  font-family: Georgia, serif;
+  font-family: 'Josefin Sans', Georgia, serif;
   font-style: italic;
 `;
 
@@ -51,15 +51,16 @@ const AuthorBio = styled.h2`
   max-width: 600px;
   font-size: 2rem;
   line-height: 1.3em;
-  font-weight: 300;
-  letter-spacing: 0.5px;
-  opacity: 0.8;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+  opacity: 1;
+  font-family: 'Josefin Sans';
 `;
 
 const Bull = styled.span`
   display: inline-block;
   margin: 0 12px;
-  opacity: 0.5;
+  opacity: 1;
 `;
 
 const AuthorProfileBioImage = css`
@@ -68,7 +69,7 @@ const AuthorProfileBioImage = css`
   margin: 0 0 20px 0;
   width: 100px;
   height: 100px;
-  box-shadow: rgba(255, 255, 255, 0.1) 0 0 0 6px;
+  box-shadow: rgba(0, 0, 0, 1) 0 0 0 6px;
 `;
 
 interface AuthorTemplateProps {
@@ -136,8 +137,8 @@ const Author: React.FC<AuthorTemplateProps> = props => {
         <meta property="og:type" content="profile" />
         <meta property="og:title" content={`${author.id} - ${config.title}`} />
         <meta property="og:url" content={config.siteUrl + props.pathContext.slug} />
-        <meta property="article:publisher" content="https://www.facebook.com/ghost" />
-        <meta property="article:author" content="https://www.facebook.com/ghost" />
+        <meta property="article:publisher" content="https://www.facebook.com/becauseno46" />
+        <meta property="article:author" content="https://www.facebook.com/becauseno46" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content={`${author.id} - ${config.title}`} />
         <meta name="twitter:url" content={config.siteUrl + props.pathContext.slug} />
@@ -158,12 +159,14 @@ const Author: React.FC<AuthorTemplateProps> = props => {
         <header
           className="no-cover"
           css={[outer, SiteHeader]}
+          /*
           style={{
             // eslint-disable-next-line @typescript-eslint/camelcase
             backgroundImage: author.profile_image ?
               `url(${author.profile_image.childImageSharp.fluid.src})` :
               '',
           }}
+          */
         >
           <div css={inner}>
             <SiteNav isHome={false} />
@@ -292,7 +295,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt
+          excerpt(pruneLength: 100, truncate: true)
           timeToRead
           frontmatter {
             title

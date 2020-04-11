@@ -55,7 +55,10 @@ const PostCardContentLink = css`
   flex-grow: 1;
   display: block;
   padding: 25px 25px 0;
+  /*
   color: ${colors.darkgrey};
+  */
+  color: #000;
 
   :hover {
     text-decoration: none;
@@ -65,20 +68,28 @@ const PostCardContentLink = css`
 const PostCardTags = styled.span`
   display: block;
   margin-bottom: 4px;
+  /*
   color: ${colors.midgrey};
-  font-size: 1.2rem;
+  */
+  color: #000;
+  font-size: 1.5rem;
   line-height: 1.15em;
   font-weight: 500;
-  letter-spacing: 0.5px;
+  letter-spacing: 0px;
+  /*
   text-transform: uppercase;
+  */
+  font-family: 'Josefin Sans';
 `;
 
 const PostCardTitle = styled.h2`
   margin-top: 0;
+  // font-family: 'Scala Sans', 'Josefin Sans';
 `;
 
 const PostCardExcerpt = styled.section`
-  font-family: Georgia, serif;
+  font-weight: 400;
+  font-family: 'Josefin Sans', 'KaiTi', Georgia, serif;
 `;
 
 const PostCardMeta = styled.footer`
@@ -144,11 +155,14 @@ const AuthorNameTooltip = styled.div`
   z-index: 999;
   display: block;
   padding: 2px 8px;
-  color: white;
+  color: #fff;
   font-size: 1.2rem;
   letter-spacing: 0.2px;
   white-space: nowrap;
+  /*
   background: ${colors.darkgrey};
+  */
+  background: #000;
   border-radius: 3px;
   box-shadow: rgba(39, 44, 49, 0.08) 0 12px 26px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
   opacity: 0;
@@ -176,7 +190,8 @@ const AuthorProfileImage = styled.img`
   width: 100%;
   height: 100%;
   /* background: color(var(--lightgrey) l(+10%)); */
-  background: ${lighten('0.1', colors.lightgrey)};
+  /* background: ${lighten('0.1', colors.lightgrey)}; */
+  background: #fff;
   border-radius: 100%;
   object-fit: cover;
 `;
@@ -184,12 +199,16 @@ const AuthorProfileImage = styled.img`
 const ReadingTime = styled.span`
   flex-shrink: 0;
   margin-left: 20px;
+  /*
   color: ${colors.midgrey};
-  font-size: 1.2rem;
+  */
+  color: #000;
+  font-family: 'Josefin Sans';
+  font-size: 1.5rem;
   line-height: 33px;
   font-weight: 500;
   letter-spacing: 0.5px;
-  text-transform: uppercase;
+  // text-transform: uppercase;
 `;
 
 export interface PostCardProps {

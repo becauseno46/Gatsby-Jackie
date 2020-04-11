@@ -8,6 +8,7 @@ import { AuthorProfileImage } from '../styles/shared';
 
 const AuthorCardSection = styled.section`
   display: flex;
+  font-family: 'Josefin Sans';
 `;
 
 const AuthorCardName = styled.h4`
@@ -16,7 +17,10 @@ const AuthorCardName = styled.h4`
   font-size: 2rem;
 
   a {
+    /*
     color: ${colors.darkgrey};
+    */
+    color: #000000;
     font-weight: 700;
   }
 
@@ -28,7 +32,10 @@ const AuthorCardName = styled.h4`
 const AuthorCardContent = styled.section`
   p {
     margin: 0;
+    /*
     color: ${colors.midgrey};
+    */
+    color: #000000;
     line-height: 1.3em;
   }
 `;

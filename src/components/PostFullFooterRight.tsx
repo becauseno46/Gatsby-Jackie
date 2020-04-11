@@ -16,17 +16,27 @@ const AuthorCardButton = css`
   display: block;
   padding: 9px 16px;
   /* border: color(var(--midgrey) l(+20%)) 1px solid; */
-  border: ${lighten('0.2', colors.midgrey)} 1px solid;
+  /* border: ${lighten('0.2', colors.midgrey)} 1px solid; */
+  border: #000000 2px solid;
+  /*
   color: ${colors.midgrey};
+  */
+  color: #000000;
+  font-family: 'Josefin Sans';
   font-size: 1.2rem;
   line-height: 1;
-  font-weight: 500;
+  font-weight: 700;
   border-radius: 20px;
-  transition: all ease 0.2s;
+  /* transition: all ease 0.2s; */
 
   :hover {
+    /*
     border-color: ${colors.blue};
     color: ${colors.blue};
+    */
+    border-color: #000000;
+    color: #ffffff;
+    background: #000000;
     text-decoration: none;
   }
 `;

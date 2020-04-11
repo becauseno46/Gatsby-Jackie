@@ -286,7 +286,10 @@ const GlobalStyles = css`
 
   ::selection {
     text-shadow: none;
+    /*
     background: ${lighten('0.3', colors.blue)};
+    */
+    background: #FCBF49;
   }
 
   hr {
@@ -404,7 +407,10 @@ const GlobalStyles = css`
   }
 
   a {
+    /*
     color: ${darken('0.05', colors.blue)};
+    */
+    color: #000;
     text-decoration: none;
   }
 
@@ -475,7 +481,7 @@ const GlobalStyles = css`
   }
 
   body {
-    background: #f4f8fb;
+    background: #fff;
   }
 `;
 
@@ -484,6 +490,8 @@ const IndexLayout: React.FC<IndexProps> = props => {
     <div className={props.className}>
       <Helmet>
         <link rel="icon" href={favicon} type="image/x-icon" />
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+        <link href="//db.onlinewebfonts.com/c/394dc5ace95adeec62bfb9a8240fe043?family=Scala+Sans" rel="stylesheet" type="text/css" />
       </Helmet>
       <Global styles={GlobalStyles} />
       {props.children}

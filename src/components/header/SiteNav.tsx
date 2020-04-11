@@ -22,7 +22,10 @@ const SiteNavStyles = css`
   position: relative;
   z-index: 300;
   display: flex;
+  /*
   justify-content: space-between;
+  */
+  justify-content: center;
   align-items: flex-start;
   overflow-y: hidden;
   height: 40px;
@@ -35,7 +38,9 @@ const SiteNavLeft = styled.div`
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
+  /*
   margin-right: 10px;
+  */
   padding-bottom: 80px;
   letter-spacing: 0.4px;
   white-space: nowrap;
@@ -50,7 +55,10 @@ const SiteNavLeft = styled.div`
 
 const NavStyles = css`
   display: flex;
+  /*
   margin: 0 0 0 -12px;
+  */
+  margin: 0 0 0 0px;
   padding: 0;
   list-style: none;
 
@@ -58,19 +66,31 @@ const NavStyles = css`
     display: block;
     margin: 0;
     padding: 0;
+    /*
     text-transform: uppercase;
+    */
+    font-family: 'Josefin Sans';
+    font-size: 150%;
+    font-weight: 700;
+  }
+
+  li:hover {
+    text-decoration: none;
+    background-color: #000000;
+    opacity: 1;
   }
 
   li a {
     display: block;
     margin: 0;
     padding: 10px 12px;
-    color: #fff;
-    opacity: 0.8;
+    color: #000000;
+    opacity: 1;
   }
 
   li a:hover {
     text-decoration: none;
+    color: #ffffff;
     opacity: 1;
   }
 `;
@@ -130,7 +150,9 @@ class SiteNav extends React.Component<SiteNavProps> {
     return (
       <nav css={[isHome && HomeNavRaise, SiteNavStyles]}>
         <SiteNavLeft>
+          {/*
           {!isHome && <SiteNavLogo />}
+          */}
           <ul css={NavStyles} role="menu">
             {/* TODO: mark current nav item - add class nav-current */}
             <li role="menuitem">
@@ -140,10 +162,20 @@ class SiteNav extends React.Component<SiteNavProps> {
               <Link to="/about">About</Link>
             </li>
             <li role="menuitem">
-              <Link to="/tags/getting-started/">Getting Started</Link>
+              <Link to="/tags/books/">Books</Link>
+            </li>
+            <li role="menuitem">
+              <Link to="/tags/travel/">Travel</Link>
+            </li>
+            <li role="menuitem">
+              <Link to="/tags/sports/">Sports</Link>
+            </li>
+            <li role="menuitem">
+              <Link to="/tags/others/">Others</Link>
             </li>
           </ul>
         </SiteNavLeft>
+        {/*
         <SiteNavRight>
           <SocialLinks>
             {config.facebook && (
@@ -174,6 +206,7 @@ class SiteNav extends React.Component<SiteNavProps> {
           )}
           {config.showSubscribe && <SubscribeModal ref={this.subscribe} />}
         </SiteNavRight>
+        */}
       </nav>
     );
   }

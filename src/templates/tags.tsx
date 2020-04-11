@@ -16,6 +16,8 @@ import {
   SiteHeaderContent,
   SiteMain,
   SiteTitle,
+  TagTitle,
+  TagDescription,
 } from '../styles/shared';
 import { PageContext } from './post';
 import Helmet from 'react-helmet';
@@ -88,18 +90,20 @@ const Tags: React.FC<TagTemplateProps> = props => {
         <header
           className={`${tagData && tagData.node.image ? '' : 'no-cover'}`}
           css={[outer, SiteHeader]}
+          /*
           style={{
             backgroundImage:
               tagData && tagData.node.image ?
                 `url('${tagData.node.image.childImageSharp.fluid.src}')` :
                 '',
           }}
+          */
         >
           <div css={inner}>
             <SiteNav isHome={false} />
             <SiteHeaderContent>
-              <SiteTitle>{tag}</SiteTitle>
-              <SiteDescription>
+              <TagTitle>{tag}</TagTitle>
+              <TagDescription>
                 {tagData && tagData.node.description ? (
                   tagData.node.description
                 ) : (
@@ -109,7 +113,7 @@ const Tags: React.FC<TagTemplateProps> = props => {
                     {totalCount === 0 && 'No posts'}
                   </>
                 )}
-              </SiteDescription>
+              </TagDescription>
             </SiteHeaderContent>
           </div>
         </header>
@@ -155,7 +159,7 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
-          excerpt
+          excerpt(pruneLength: 100, truncate: true)
           timeToRead
           frontmatter {
             title

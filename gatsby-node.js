@@ -54,7 +54,7 @@ exports.createPages = async ({ graphql, actions }) => {
       ) {
         edges {
           node {
-            excerpt
+            excerpt(pruneLength: 100, truncate: true)
             timeToRead
             frontmatter {
               title

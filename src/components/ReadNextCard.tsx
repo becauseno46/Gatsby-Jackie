@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import * as _ from 'lodash';
 
 import { colors } from '../styles/colors';
-import InfinityIcon from './icons/infinity';
+import TagIcon from './icons/tag';
 import config from '../website-config';
 
 export interface ReadNextCardStylesProps {
@@ -20,11 +20,17 @@ const ReadNextCardStyles = styled.article<ReadNextCardStylesProps>`
   margin: 0 20px 40px;
   padding: 25px;
   color: #fff;
+  /*
   background: ${colors.darkgrey} center center;
+  */
+  background: #000 center center;
   background-size: cover;
   border-radius: 5px;
   box-shadow: rgba(39, 44, 49, 0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
+  /*
   background-image: url(${props => props.coverImage});
+  */
+  font-family: 'Josefin Sans';
 
   :before {
     content: "";
@@ -34,7 +40,9 @@ const ReadNextCardStyles = styled.article<ReadNextCardStylesProps>`
     bottom: 0;
     left: 0;
     display: block;
+    /*
     background: linear-gradient(135deg, rgba(0,40,60,0.8) 0%,rgba(0,20,40,0.7) 100%);
+    */
     border-radius: 5px;
     backdrop-filter: blur(2px);
   }
@@ -49,22 +57,22 @@ const ReadNextCardHeader = styled.header`
 
 const ReadNextCardHeaderSitetitle = styled.small`
   display: block;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   line-height: 1.3em;
-  opacity: 0.8;
+  opacity: 1;
 `;
 
 const ReadNextCardHeaderTitle = styled.h3`
   margin: 0;
-  padding: 0 20px;
+  padding: 10px 20px;
   color: #fff;
   font-size: 3rem;
   line-height: 1.2em;
-  letter-spacing: 1px;
+  letter-spacing: 0px;
 
   a {
     color: #fff;
-    font-weight: 300;
+    font-weight: 500;
     text-decoration: none;
   }
 
@@ -81,11 +89,11 @@ const ReadNextDivider = styled.div`
 
   svg {
     width: 40px;
-    fill: transparent;
+    fill: #fff;
     stroke: #fff;
 
     stroke-width: 0.5px;
-    stroke-opacity: 0.65;
+    stroke-opacity: 1;
   }
 `;
 
@@ -117,7 +125,7 @@ const ReadNextCardContent = styled.div`
   li a {
     display: block;
     padding: 20px 0;
-    border-bottom: rgba(255, 255, 255, 0.3) 1px solid;
+    border-bottom: rgba(255, 255, 255, 1) 1px solid;
     color: #fff;
     font-weight: 500;
     vertical-align: top;
@@ -130,6 +138,8 @@ const ReadNextCardContent = styled.div`
 
   li a:hover {
     opacity: 1;
+    border-bottom: rgba(255, 255, 255, 1) 3px solid;
+    text-decoration: none;
   }
 `;
 
@@ -174,7 +184,7 @@ const ReadNextCard: React.FC<ReadNextProps> = props => {
     <StaticQuery
       query={graphql`
         query ReadNextQuery {
-          header: file(relativePath: { eq: "img/blog-cover.jpg" }) {
+          header: file(relativePath: { eq: "img/blog-cover.png" }) {
             childImageSharp {
               # Specify the image processing specifications right in the query.
               # Makes it trivial to update as your page's design changes.
@@ -197,7 +207,7 @@ const ReadNextCard: React.FC<ReadNextProps> = props => {
             </ReadNextCardHeaderTitle>
           </ReadNextCardHeader>
           <ReadNextDivider>
-            <InfinityIcon />
+            <TagIcon />
           </ReadNextDivider>
           <ReadNextCardContent>
             <ul>

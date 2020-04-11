@@ -60,10 +60,16 @@ const PostFullMeta = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  /*
   color: ${colors.midgrey};
-  font-size: 1.4rem;
+  */
+  color: #000;
+  font-family: 'Josefin Sans';
+  font-size: 1.5rem;
   font-weight: 600;
+  /*
   text-transform: uppercase;
+  */
 
   @media (max-width: 500px) {
     font-size: 1.2rem;
@@ -72,12 +78,19 @@ const PostFullMeta = styled.section`
 `;
 
 const PostFullMetaDate = styled.time`
+  /*
   color: ${colors.blue};
+  */
+  color: #000;
 `;
 
 export const PostFullTitle = styled.h1`
   margin: 0;
+  /*
   color: ${setLightness('0.05', colors.darkgrey)};
+  */
+  color: #000;
+
   @media (max-width: 500px) {
     font-size: 2.9rem;
   }
@@ -108,6 +121,7 @@ const PostFullImage = styled.figure`
 const DateDivider = styled.span`
   display: inline-block;
   margin: 0 6px 1px;
+  color: #000;
 `;
 
 const ReadNextFeed = styled.div`
@@ -330,7 +344,7 @@ export default PageTemplate;
 
 export const query = graphql`
   query($slug: String, $primaryTag: String) {
-    logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
+    logo: file(relativePath: { eq: "img/blog-logo.png" }) {
       childImageSharp {
         fixed {
           ...GatsbyImageSharpFixed
@@ -340,7 +354,7 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       htmlAst
-      excerpt
+      excerpt(pruneLength: 100, truncate: true)
       timeToRead
       frontmatter {
         title
@@ -378,7 +392,7 @@ export const query = graphql`
         node {
           id
           timeToRead
-          excerpt
+          excerpt(pruneLength: 100, truncate: true)
           frontmatter {
             title
           }

@@ -13,7 +13,10 @@ const SiteFooter = css`
   padding-top: 20px;
   padding-bottom: 60px;
   color: #fff;
+  /*
   background: ${setLightness('0.0015', colors.darkgrey)};
+  */
+  background: #000000;
 `;
 
 const SiteFooterContent = css`
@@ -21,10 +24,11 @@ const SiteFooterContent = css`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  font-family: 'Josefin Sans';
   a {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.8);
   }
   a:hover {
     color: rgba(255, 255, 255, 1);
@@ -73,7 +77,10 @@ const Footer: React.FC = () => {
           <Link to="/">{config.title}</Link> &copy; {new Date().getFullYear()}{' '}
           {config.footer && (
             <Link to="/">
+              {/*
               | {config.title} {config.footer}
+              */}
+              | {config.footer}
             </Link>
           )}
         </section>
@@ -90,11 +97,13 @@ const Footer: React.FC = () => {
             </a>
           )}
 
+          {/*
           <a href="https://ghost.org" target="_blank" rel="noopener noreferrer">
             Ghost
           </a>
 
           <a href="/rss.xml">RSS</a>
+          */}
         </SiteFooterNav>
       </div>
     </footer>

@@ -24,18 +24,40 @@ export const SiteTitle = styled.h1`
   z-index: 10;
   margin: 0;
   padding: 0;
-  font-size: 3.8rem;
+  font-size: 5rem;
   font-weight: 700;
+  font-family: 'Josefin Sans';
 `;
 
 export const SiteDescription = styled.h2`
   z-index: 10;
   margin: 0;
   padding: 5px 0;
-  font-size: 2.2rem;
-  font-weight: 300;
+  font-size: 5rem;
+  font-weight: 700;
   letter-spacing: 0.5px;
-  opacity: 0.8;
+  opacity: 1;
+  font-family: 'Josefin Sans';
+`;
+
+export const TagTitle = styled.h1`
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+  font-size: 5rem;
+  font-weight: 700;
+  font-family: 'Josefin Sans';
+`;
+
+export const TagDescription = styled.h2`
+  z-index: 10;
+  margin: 0;
+  padding: 5px 0;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  opacity: 1;
+  font-family: 'Josefin Sans';
 `;
 
 export const PostFeed = css`
@@ -60,7 +82,7 @@ export const SocialLink = css`
   margin: 0;
   padding: 10px;
   color: #fff;
-  opacity: 0.8;
+  opacity: 1;
 
   :hover {
     opacity: 1;
@@ -68,7 +90,7 @@ export const SocialLink = css`
 
   svg {
     height: 1.8rem;
-    fill: #fff;
+    fill: #000;
   }
 `;
 
@@ -76,9 +98,13 @@ export const SiteHeader = css`
   position: relative;
   padding-top: 12px;
   padding-bottom: 12px;
+  /*
   color: #fff;
+  */
+  color: #000;
   /* background: color(var(--darkgrey) l(-5%)) no-repeat center center; */
-  background: ${darken('0.05', colors.darkgrey)} no-repeat center center;
+  /*background: ${darken('0.05', colors.darkgrey)} no-repeat center center; */
+  background: #fff no-repeat center center;
   background-size: cover;
 `;
 
@@ -87,6 +113,9 @@ export const SiteHeaderContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /*
+  padding: 10vw 4vw;
+  */
   padding: 10vw 4vw;
   min-height: 200px;
   max-height: 450px;
@@ -138,7 +167,8 @@ export const SiteHeaderStyles = css`
 export const AuthorProfileImage = css`
   display: block;
   /* background: color(var(--lightgrey) l(+10%)); */
-  background: ${lighten('0.1', colors.lightgrey)};
+  /* background: ${lighten('0.1', colors.lightgrey)}; */
+  background: #fff;
   border-radius: 100%;
   object-fit: cover;
   margin-right: 15px;

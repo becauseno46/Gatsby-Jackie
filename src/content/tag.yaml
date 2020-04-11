@@ -1,3 +1,9 @@
-- id: speeches
-  description: Some of the greatest words ever spoken.
-  image: img/speeches-cover.jpg
+- id: Books
+  description: Konw the world, but not the world.
+  image: img/white-cover.jpg
+- id: Travel
+  description: Read more, walk more.
+  image: img/white-cover.jpg
+- id: Sports
+  description: Endless life, endless exercise.
+  image: img/white-cover.jpg
