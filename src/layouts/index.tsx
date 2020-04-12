@@ -333,7 +333,10 @@ const GlobalStyles = css`
   ol,
   ul {
     padding-left: 1.3em;
+    /*
     padding-right: 1.5em;
+    */
+    padding-right: 0em;
   }
 
   ol ol,

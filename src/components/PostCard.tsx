@@ -89,7 +89,8 @@ const PostCardTitle = styled.h2`
 
 const PostCardExcerpt = styled.section`
   font-weight: 400;
-  font-family: 'Josefin Sans', 'KaiTi', Georgia, serif;
+  font-family: 'Josefin Sans', 'KaiTi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+      'Open Sans', 'Helvetica Neue', sans-serif, Georgia, serif;
 `;
 
 const PostCardMeta = styled.footer`

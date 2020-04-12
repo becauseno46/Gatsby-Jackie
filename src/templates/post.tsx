@@ -105,7 +105,7 @@ const PostFullImage = styled.figure`
 
   @media (max-width: 1170px) {
     margin: 0 -4vw -100px;
-    height: 600px;
+    height: 500px;
     border-radius: 0;
   }
 
@@ -114,7 +114,7 @@ const PostFullImage = styled.figure`
   }
   @media (max-width: 500px) {
     margin-bottom: 4vw;
-    height: 350px;
+    height: 200px;
   }
 `;
 

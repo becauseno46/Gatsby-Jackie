@@ -10,7 +10,8 @@ export const PostFullContent = styled.section`
   margin: 0 auto;
   padding: 70px 100px 0;
   min-height: 230px;
-  font-family: 'Scala Sans', 'Josefin Sans', 'KaiTi', Georgia, serif;
+  font-family: 'Scala Sans', 'Josefin Sans', 'KaiTi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+      'Open Sans', 'Helvetica Neue', sans-serif, Georgia, serif;
   font-size: 1.8rem;
   line-height: 1.6em;
   background: #fff;
@@ -20,7 +21,7 @@ export const PostFullContent = styled.section`
     padding: 5vw 7vw 0;
   }
   @media (max-width: 800px) {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
   }
 
   :before {
@@ -251,7 +252,7 @@ export const PostFullContent = styled.section`
   }
   @media (max-width: 500px) {
     h1 {
-      font-size: 2.8rem;
+      font-size: 3.0rem;
     }
   }
 
@@ -265,7 +266,7 @@ export const PostFullContent = styled.section`
   }
   @media (max-width: 500px) {
     h2 {
-      font-size: 2.6rem;
+      font-size: 2.8rem;
     }
   }
 
@@ -279,7 +280,7 @@ export const PostFullContent = styled.section`
   }
   @media (max-width: 500px) {
     h3 {
-      font-size: 2.2rem;
+      font-size: 2.6rem;
     }
   }
 
@@ -293,7 +294,7 @@ export const PostFullContent = styled.section`
   }
   @media (max-width: 500px) {
     h4 {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
     }
   }
 
@@ -331,7 +332,7 @@ export const PostFullContent = styled.section`
     font-weight: 700;
   }
   @media (max-width: 500px) {
-    h4 {
+    h5 {
       font-size: 2.2rem;
     }
   }
