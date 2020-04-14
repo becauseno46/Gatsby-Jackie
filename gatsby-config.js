@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: 'Jackie Hu',
     description: 'Never Lose Youself',
-    siteUrl: 'https://google.com', // full path to blog - no ending slash
+    siteUrl: 'https://jackiehu.tk', // full path to blog - no ending slash
   },
   mapping: {
     'MarkdownRemark.frontmatter.author': 'AuthorYaml',
@@ -47,7 +47,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://google.com',
+        siteUrl: 'https://jackiehu.tk',
       },
     },
     'gatsby-plugin-emotion',

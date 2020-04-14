@@ -54,7 +54,7 @@ const config: WebsiteConfig = {
   coverImage: 'img/blog-cover.png',
   logo: 'img/blog-logo.png',
   lang: 'en',
-  siteUrl: 'https://google.com',
+  siteUrl: 'https://jackiehu.tk',
   facebook: 'https://www.facebook.com/becauseno46',
   twitter: 'https://twitter.com/becauseno46',
   showSubscribe: false,
